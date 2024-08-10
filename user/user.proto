@@ -1,0 +1,153 @@
+syntax = "proto3";
+
+option go_package = "genproto/user";
+
+package user;
+
+service Users {
+    rpc Register(RegisterReq) returns (RegisterRes);
+    rpc Login(LoginReq) returns (LoginRes);
+    rpc GetUserProfile(GetProfileReq) returns (GetProfileRes);
+    rpc UpdateProfile(UpdateProfileReq) returns (Void);
+    rpc GetUSerByEmail(GetUSerByEmailReq) returns (FilterUsers);
+    rpc GetUsers (UsersListRequest) returns (UsersResponse);
+    rpc UpdateUser (UpdateUserRequest) returns (Void);
+    rpc DeleteUser (UserId) returns (Void);
+    rpc GetUserById (UserId) returns (GetUserResponse);
+    rpc UpdatePassword (UpdatePasswordReq) returns (Void);
+    rpc ChangePassword (ChangePasswordReq) returns (ChangePasswordRes);
+}
+
+message UpdatePasswordReq {
+    string id       = 1;
+    string password = 2;
+}
+  
+message Password {
+    string email        = 1;
+    string code         = 2;
+    string new_password = 3;
+}
+
+message UserId {
+    string id = 1;
+}
+
+message UpdateProfileReq {
+    string email         = 1;
+    string first_name    = 2;
+    string last_name     = 3;
+    string date_of_birth = 4;
+    string gender        = 5;
+}
+  
+message GetProfileReq {
+    string user_id = 1;
+}
+  
+message GetProfileRes {
+    string user_id         = 1;
+    string email           = 2;
+    string first_name      = 3;
+    string last_name       = 4;
+    string date_of_birth   = 5;
+    string gender          = 6;
+    string role            = 7;
+    string created_at      = 8;
+}
+  
+message RegisterReq{
+    string email           = 1;
+    string password        = 2;
+    string first_name      = 3;
+    string last_name       = 4;
+    string date_of_birth   = 5;
+    string gender          = 6;
+}
+  
+message RegisterRes{
+    string user_id = 1;
+}
+
+message LoginReq {
+    string email    = 1;
+    string password = 2;
+}
+
+message LoginRes {
+    string user_id      = 1;
+    string first_name   = 2;
+    string last_name    = 3;
+    string role         = 4;
+    string accestoken   = 5;
+    string refreshtoken = 6;
+}
+
+
+message User {
+    string user_id         = 1;
+    string email           = 2;
+    string first_name      = 3;
+    string last_name       = 4;
+    string date_of_birth   = 5;
+    string gender          = 6;
+    string role            = 7;
+    string created_at      = 8;
+}
+
+
+message Void {}
+
+
+message FilterUsers {
+    string user_id         = 1;
+    string email           = 2;
+    string first_name      = 3;
+    string last_name       = 4;
+    string date_of_birth   = 5;
+    string gender          = 6;
+    string role            = 7;
+    string created_at      = 8;
+    string updated_at      = 9;
+}
+
+message UsersListRequest {
+    User users   = 1; 
+    int64 limit  = 2;
+    int64 offset = 3;
+}
+
+message UsersResponse {
+    repeated FilterUsers users = 1; 
+    int64 limit                = 2;
+    int64 offset               = 3;
+} 
+
+
+message GetUserResponse {
+  FilterUsers user = 1; 
+}
+
+
+message UpdateUserRequest {
+    string email         = 1;
+    string first_name    = 2;
+    string last_name     = 3;
+    string date_of_birth = 4;
+    string gender        = 5;
+} 
+
+
+message GetUSerByEmailReq {
+  string email = 1;
+}
+
+message ChangePasswordReq {
+  string user_id = 1;
+  string old_password = 2;
+  string new_password = 3;
+}
+
+message ChangePasswordRes {
+  string message = 1; 
+}
