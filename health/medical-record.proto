@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+option go_package = "genproto/madical-record";
+
+package health;
+
+service MedicalRecord {
+    rpc CreateMedicalReport(CreateMedicalReportReq) returns (CreateMedicalReportRes);
+    rpc GetMedicalReport(GetMedicalReportReq) returns (GetMedicalReportRes);
+    rpc GetMedicalReportById(GetMedicalReportByIdReq) returns (GetMedicalReportByIdRes);
+    rpc UpdateMedicalReport(UpdateMedicalReportReq) returns (UpdateMedicalReportRes);
+    rpc DeleteMedicalReport(DeleteMedicalReportReq) returns (DeleteMedicalReportRes);
+}
+
+message CreateMedicalReportReq {
+    string user_id                  = 1;
+    string record_type              = 2;
+    string record_date              = 3;
+    string description              = 4;
+    string doctor_id                = 5;
+    repeated Attachment attachments = 6;
+}
+
+message Attachment {
+    string file_url = 1;
+}
+
+message CreateMedicalReportRes {
+    string message = 1;
+}
+
+message GetMedicalReportReq {
+    string user_id = 1;
+}
+
+message GetMedicalReportRes {
+    MedicalReport medical_report = 1;
+}
+
+message MedicalReport {
+}
+
+message GetMedicalReportByIdReq {
+
+}
+
+message GetMedicalReportByIdRes {
+
+}
+
+message UpdateMedicalReportReq {
+
+}
+
+message UpdateMedicalReportRes {
+
+}
+
+message DeleteMedicalReportReq {
+
+}
+
+message DeleteMedicalReportRes {
+
+}
