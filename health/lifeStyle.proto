@@ -56,12 +56,13 @@ message GetLifeStyleDataByIdRes {
 }
 
 message UpdateLifeStyleDataReq {
-    string id = 1;
+    string id         = 1;
+    string data_type  = 2;
+    string data_value = 3;
 }
 
 message UpdateLifeStyleDataRes {
-    string data_type     = 1;
-    string data_value    = 2;
+    bool message = 1;
 }
 
 message DeleteLifeStyleDataReq {
