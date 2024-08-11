@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+option go_package = "genproto/lifeStyle";
+
+package lifeStyle;
+
+service lifeStyle {
+    rpc AddLifeStyleData(AddLifeStyleDataReq) returns (AddLifeStyleDataRes);
+    rpc GetLifeStyleData(GetLifeStyleDataReq) returns (GetLifeStyleDataRes);
+    rpc GetLifeStyleDataById(GetLifeStyleDataByIdReq) returns (GetLifeStyleDataRes);
+    rpc UpdateLifeStyleData(UpdateLifeStyleDataReq) returns (UpdateLifeStyleDataRes);
+    rpc DeleteLifeStyleData(DeleteLifeStyleDataReq) returns (DeleteLifeStyleDataRes);
+}
+
+message AddLifeStyleDataReq {
+    string user_id = 1;
+    string data_type = 2;
+    string data_value = 3;
+}
+
+message AddLifeStyleDataRes {
+    string user_id = 1;
+}
+
+message GetLifeStyleDataReq {
+    string user_id = 1;
+}
+
+message GetLifeStyleDataRes {
+    string id            = 1;
+    string first_name    = 2;
+    string last_name     = 3;
+    string data_type     = 4;
+    string data_value    = 5;
+    string recorded_date = 6;
+}
+
+message GetLifeStyleDataByIdReq {
+    string id = 1;
+}
+
+message GetLifeStyleDataByIdRes {
+    string id            = 1;
+    string user_id       = 2;
+    string data_type     = 3;
+    string data_value    = 4;
+    string recorded_date = 5;
+}
+
+message UpdateLifeStyleDataReq {
+    string id = 1;
+}
+
+message UpdateLifeStyleDataRes {
+    string data_type     = 1;
+    string data_value    = 2;
+}
+
+message DeleteLifeStyleDataReq {
+    string id = 1;
+}
+
+message DeleteLifeStyleDataRes {
+    bool message = 1;
+}

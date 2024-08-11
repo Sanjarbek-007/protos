@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+option go_package = "genproto/wearable";
+
+package wearable;
+
+service Wearable {
+    rpc AddWearableData(AddWearableDataReq) returns (AddWearableDataRes);
+    rpc GetWearableData(GetWearableDataReq) returns (GetWearableDataRes);
+    rpc GetWearableDataById(GetWearableDataByIdReq) returns (GetWearableDataByIdRes);
+    rpc UpdateWearableData(UpdateWearableDataReq) returns (UpdateWearableDataRes);
+    rpc DeleteWearableData(DeleteWearableDataReq) returns (DeleteWearableDataRes);
+}
+
+message AddWearableDataReq {
+    string user_id     = 1;
+    string device_type = 2;
+    string data_type   = 3;
+    string data_value  = 4;
+}
+
+message AddWearableDataRes {
+    string user_id = 1;
+}
+
+message GetWearableDataReq {
+    string user_id     = 1;
+}
+
+message GetWearableDataRes {
+    string id          = 1;
+    string first_name  = 2;
+    string last_name   = 3;
+    string device_type = 4;
+    string data_type   = 5;
+    string data_value  = 6;
+    string recorded_timestamp = 7;
+}
+
+message GetWearableDataByIdReq {
+    string id = 1;
+}
+
+message GetWearableDataByIdRes {
+    string id          = 1;
+    string user_id     = 2;
+    string device_type = 3;
+    string data_type   = 4;
+    string data_value  = 5;
+    string recorded_timestamp = 6;
+}
+
+message UpdateWearableDataReq {
+    string id          = 1;
+    string device_type = 2;
+    string data_type   = 3;
+    string data_value  = 4;
+}
+
+message UpdateWearableDataRes {
+    bool message = 1;
+}
+
+message DeleteWearableDataReq {
+    string id = 1;
+}
+
+message DeleteWearableDataRes {
+    bool message = 1;
+}

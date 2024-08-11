@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option go_package = "genproto/health";
+
+package health;
+
+service HealthCheck {
+    rpc GenerateHealthRecommendations(GenerateHealthRecommendationsReq) returns (GenerateHealthRecommendationsRes);
+    rpc GetRealtimeHealthMonitoring(GetRealtimeHealthMonitoringReq) returns (GetRealtimeHealthMonitoringRes);
+    rpc GetDailyHealthSummary(GetDailyHealthSummaryReq) returns (GetDailyHealthSummaryRes);
+    rpc GetWeeklyHealthSummary(GetWeeklyHealthSummaryReq) returns (GetWeeklyHealthSummaryRes);
+}
+
+message GenerateHealthRecommendationsReq {
+    string user_id             = 1;
+    string recommendation_type = 2;
+    string description         = 3;
+    int32 priority             = 4;
+}
+
+message GenerateHealthRecommendationsRes {
+    bool message = 1;
+}
+
+message HealthRecommendation {
+    string first_name          = 1;
+    string last_name           = 2;
+    string recommendation_type = 3;
+    string description         = 4;
+    int32 priority             = 5;
+}
+
+message GetRealtimeHealthMonitoringReq {
+    string user_id = 1;
+}
+
+message GetRealtimeHealthMonitoringRes {
+    string first_name          = 1;
+    string last_name           = 2;
+    string recommendation_type = 3;
+    string description         = 4;
+    int32 priority             = 5;
+}
+
+message GetDailyHealthSummaryReq {
+    string user_id = 1;
+}
+
+message GetDailyHealthSummaryRes {
+    HealthRecommendation recommendations = 1;
+}
+
+message GetWeeklyHealthSummaryReq {
+    string user_id = 1;
+}
+
+message GetWeeklyHealthSummaryRes {
+    repeated HealthRecommendation recommendations = 1;
+}

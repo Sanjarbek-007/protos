@@ -1,18 +1,18 @@
 syntax = "proto3";
 
-option go_package = "genproto/madical-record";
+option go_package = "genproto/madical";
 
-package health;
+package medical;
 
 service MedicalRecord {
-    rpc CreateMedicalReport(CreateMedicalReportReq) returns (CreateMedicalReportRes);
+    rpc AddMedicalReport(AddMedicalReportReq) returns (AddMedicalReportRes);
     rpc GetMedicalReport(GetMedicalReportReq) returns (GetMedicalReportRes);
     rpc GetMedicalReportById(GetMedicalReportByIdReq) returns (GetMedicalReportByIdRes);
     rpc UpdateMedicalReport(UpdateMedicalReportReq) returns (UpdateMedicalReportRes);
     rpc DeleteMedicalReport(DeleteMedicalReportReq) returns (DeleteMedicalReportRes);
 }
 
-message CreateMedicalReportReq {
+message AddMedicalReportReq {
     string user_id                  = 1;
     string record_type              = 2;
     string record_date              = 3;
@@ -25,7 +25,7 @@ message Attachment {
     string file_url = 1;
 }
 
-message CreateMedicalReportRes {
+message AddMedicalReportRes {
     string message = 1;
 }
 
@@ -38,28 +38,48 @@ message GetMedicalReportRes {
 }
 
 message MedicalReport {
+    string id                   = 1;
+    string user_name            = 2;
+    string record_type          = 3;
+    string record_date          = 4;
+    string description          = 5;
+    string doctor_name          = 6;
+    repeated string attachments = 7;
 }
 
 message GetMedicalReportByIdReq {
-
+    string id = 1;
 }
 
 message GetMedicalReportByIdRes {
-
+    string id                       = 1;
+    string user_id                  = 2;
+    string first_name               = 3;
+    string last_name                = 4;
+    string email                    = 5;
+    string record_type              = 6;
+    string record_date              = 7;
+    string description              = 8;
+    string doctor_id                = 9;
+    string doctor_name              = 10;
+    repeated Attachment attachments = 11;
 }
 
 message UpdateMedicalReportReq {
-
+    string id = 1;
 }
 
 message UpdateMedicalReportRes {
-
+    string record_type              = 1;
+    string description              = 2;
+    string doctor_id                = 3;
+    repeated Attachment attachments = 4;
 }
 
 message DeleteMedicalReportReq {
-
+    string id = 1;
 }
 
 message DeleteMedicalReportRes {
-
+    bool message = 1;
 }
