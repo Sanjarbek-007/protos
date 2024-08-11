@@ -34,7 +34,7 @@ message GetMedicalReportReq {
 }
 
 message GetMedicalReportRes {
-    MedicalReport medical_report = 1;
+    repeated MedicalReport medical_report = 1;
 }
 
 message MedicalReport {
