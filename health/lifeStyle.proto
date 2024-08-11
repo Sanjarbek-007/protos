@@ -7,7 +7,7 @@ package lifeStyle;
 service lifeStyle {
     rpc AddLifeStyleData(AddLifeStyleDataReq) returns (AddLifeStyleDataRes);
     rpc GetLifeStyleData(GetLifeStyleDataReq) returns (GetLifeStyleDataRes);
-    rpc GetLifeStyleDataById(GetLifeStyleDataByIdReq) returns (GetLifeStyleDataRes);
+    rpc GetLifeStyleDataById(GetLifeStyleDataByIdReq) returns (GetLifeStyleDataByIdRes);
     rpc UpdateLifeStyleData(UpdateLifeStyleDataReq) returns (UpdateLifeStyleDataRes);
     rpc DeleteLifeStyleData(DeleteLifeStyleDataReq) returns (DeleteLifeStyleDataRes);
 }
