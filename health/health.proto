@@ -44,6 +44,7 @@ message GetRealtimeHealthMonitoringRes {
 
 message GetDailyHealthSummaryReq {
     string user_id = 1;
+    string date    = 2;
 }
 
 message GetDailyHealthSummaryRes {
