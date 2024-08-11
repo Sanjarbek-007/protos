@@ -20,7 +20,7 @@ message AddWearableDataReq {
 }
 
 message AddWearableDataRes {
-    string user_id = 1;
+    bool message = 1;
 }
 
 message GetWearableDataReq {
