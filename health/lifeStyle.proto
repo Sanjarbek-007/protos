@@ -26,7 +26,7 @@ message GetLifeStyleDataReq {
     bool message = 1;
 }
 
-message GetLifeStyleDataRes {
+message GetLifeStyle {
     string id            = 1;
     string first_name    = 2;
     string last_name     = 3;
@@ -35,16 +35,24 @@ message GetLifeStyleDataRes {
     string recorded_date = 6;
 }
 
+message GetLifeStyleDataRes {
+    repeated GetLifeStyle life_style = 1;
+}
+
 message GetLifeStyleDataByIdReq {
     string id = 1;
 }
 
-message GetLifeStyleDataByIdRes {
+message GetLifeStyleByIdRes {
     string id            = 1;
     string user_id       = 2;
     string data_type     = 3;
     string data_value    = 4;
     string recorded_date = 5;
+}
+
+message GetLifeStyleDataByIdRes {
+    repeated GetLifeStyleByIdRes life_style = 1;
 }
 
 message UpdateLifeStyleDataReq {
