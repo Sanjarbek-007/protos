@@ -27,7 +27,7 @@ message GetWearableDataReq {
     string user_id     = 1;
 }
 
-message GetWarable {
+message Warable {
     string id          = 1;
     string first_name  = 2;
     string last_name   = 3;
@@ -38,14 +38,14 @@ message GetWarable {
 }
 
 message GetWearableDataRes {
-    repeated GetWarable warable = 1;
+    repeated Warable warable = 1;
 }
 
 message GetWearableDataByIdReq {
     string id = 1;
 }
 
-message GetWearableById {
+message WearableById {
     string id          = 1;
     string user_id     = 2;
     string device_type = 3;
@@ -55,7 +55,7 @@ message GetWearableById {
 }
 
 message GetWearableDataByIdRes {
-    repeated GetWearableById get_warable_id = 1;
+    repeated WearableById get_warable_id = 1;
 }
 
 message UpdateWearableDataReq {
