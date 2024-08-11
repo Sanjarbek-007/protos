@@ -52,7 +52,9 @@ message GetDailyHealthSummaryRes {
 }
 
 message GetWeeklyHealthSummaryReq {
-    string user_id = 1;
+    string user_id      = 1;
+    string start_date   = 2;
+    string end_date     = 3;
 }
 
 message GetWeeklyHealthSummaryRes {
