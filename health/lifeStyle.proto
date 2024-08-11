@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "genproto/lifeStyle";
+option go_package = "genproto/health";
 
 package lifeStyle;
 
