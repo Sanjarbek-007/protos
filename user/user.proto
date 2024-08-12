@@ -13,7 +13,7 @@ service Users {
     rpc GetUsers (UsersListRequest) returns (UsersResponse);
     rpc UpdateUser (UpdateUserRequest) returns (Void);
     rpc DeleteUser (UserId) returns (Void);
-    rpc GetUserById (UserId) returns (GetUserResponse);
+    rpc GetUserById (UserId) returns (User);
     rpc UpdatePassword (UpdatePasswordReq) returns (Void);
     rpc ChangePassword (ChangePasswordReq) returns (ChangePasswordRes);
 }
@@ -30,7 +30,7 @@ message Password {
 }
 
 message UserId {
-    string id = 1;
+    string user_id = 1;
 }
 
 message UpdateProfileReq {
