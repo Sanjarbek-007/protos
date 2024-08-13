@@ -54,7 +54,7 @@ message GetLifeStyleByIdRes {
 }
 
 message GetLifeStyleDataByIdRes {
-    repeated GetLifeStyleByIdRes life_style = 1;
+    GetLifeStyleByIdRes life_style = 1;
 }
 
 message UpdateLifeStyleDataReq {
