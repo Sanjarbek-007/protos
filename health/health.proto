@@ -9,6 +9,44 @@ service HealthCheck {
     rpc GetRealtimeHealthMonitoring(GetRealtimeHealthMonitoringReq) returns (GetRealtimeHealthMonitoringRes);
     rpc GetDailyHealthSummary(GetDailyHealthSummaryReq) returns (GetDailyHealthSummaryRes);
     rpc GetWeeklyHealthSummary(GetWeeklyHealthSummaryReq) returns (GetWeeklyHealthSummaryRes);
+    rpc AddRealTimeData(AddRealTimeDataReq) returns (AddRealTimeDataRes);
+    rpc GetRealTimeData(GetRealTimeDataReq) returns (GetRealTimeDataRes);
+}
+
+message AddRealTimeDataReq {
+    string user_id                    = 1;
+    string recommendation_type        = 2;
+    string description_recommendation = 3;
+    int32 priority                    = 4;
+    string record_type                = 5;
+    string description_record         = 6;
+    string data_type                  = 7;
+    string data_value                 = 8;
+    string device_type                = 9;
+    string device_data_type           = 10;
+    string device_data_value          = 11;
+}
+
+message AddRealTimeDataRes {
+    bool message = 1;
+}
+
+message GetRealTimeDataReq {
+    string user_id = 1;
+}
+
+message GetRealTimeDataRes {
+    string user_id                    = 1;
+    string recommendation_type        = 2;
+    string description_recommendation = 3;
+    int32 priority                    = 4;
+    string record_type                = 5;
+    string description_record         = 6;
+    string data_type                  = 7;
+    string data_value                 = 8;
+    string device_type                = 9;
+    string device_data_type           = 10;
+    string device_data_value          = 11;
 }
 
 message GenerateHealthRecommendationsReq {

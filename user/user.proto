@@ -87,7 +87,6 @@ message LoginRes {
 
 message User {
     string user_id         = 1;
-    string email           = 2;
     string first_name      = 3;
     string last_name       = 4;
     string date_of_birth   = 5;
