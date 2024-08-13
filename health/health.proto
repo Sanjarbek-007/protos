@@ -35,7 +35,7 @@ message GetRealTimeDataReq {
     string user_id = 1;
 }
 
-message GetRealTimeDataRes {
+message Data {
     string user_id                    = 1;
     string recommendation_type        = 2;
     string description_recommendation = 3;
@@ -47,6 +47,10 @@ message GetRealTimeDataRes {
     string device_type                = 9;
     string device_data_type           = 10;
     string device_data_value          = 11;
+}
+
+message GetRealTimeDataRes {
+    Data data = 1;
 }
 
 message GenerateHealthRecommendationsReq {
