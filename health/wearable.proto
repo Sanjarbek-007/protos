@@ -57,7 +57,7 @@ message WearableById {
 }
 
 message GetWearableDataByIdRes {
-    repeated WearableById get_warable_id = 1;
+    WearableById get_warable_id = 1;
 }
 
 message UpdateWearableDataReq {
