@@ -33,6 +33,8 @@ message GetMedicalReportReq {
     string user_id    = 1;
     string first_name = 2;
     string last_name  = 3;
+    int32 limit       = 4;
+    int32 offset      = 5;
 }
 
 message GetMedicalReportRes {
