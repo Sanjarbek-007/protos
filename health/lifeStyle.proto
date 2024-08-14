@@ -19,7 +19,7 @@ message AddLifeStyleDataReq {
 }
 
 message AddLifeStyleDataRes {
-    bool message = 1;
+    string id = 1;
 }
 
 message GetLifeStyleDataReq {

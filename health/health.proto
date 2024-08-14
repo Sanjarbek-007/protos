@@ -86,7 +86,7 @@ message GenerateHealthRecommendationsReq {
 }
 
 message GenerateHealthRecommendationsRes {
-    bool message = 1;
+    string id = 1;
 }
 
 message HealthRecommendation {
