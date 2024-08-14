@@ -13,6 +13,31 @@ service HealthCheck {
     rpc GetRealTimeData(GetRealTimeDataReq) returns (GetRealTimeDataRes);
 }
 
+service HealthMonitoring {
+    rpc GetHealthMonitor(UserId) returns (GetHealthMonitorsRes);
+}
+
+message UserId {
+    string user_id = 1;
+}
+
+
+message CreateHealthMonitorReq {
+    string user_id              = 1;
+    repeated string description = 2;
+    repeated string data_type   = 3;
+    repeated string data_value  = 4;
+    repeated string device_type = 5;
+}
+
+message GetHealthMonitorsRes{
+    repeated string description = 2;
+    repeated string data_type   = 3;
+    repeated string data_value  = 4;
+    repeated string device_type = 5;
+}
+
+
 message AddRealTimeDataReq {
     string user_id                    = 1;
     string recommendation_type        = 2;
