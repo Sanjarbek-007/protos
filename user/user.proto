@@ -18,6 +18,12 @@ service Users {
     rpc ChangePassword (ChangePasswordReq) returns (ChangePasswordRes);
 }
 
+service Notifications{
+    rpc GetAllNotifications(GetNotificationsReq) returns (GetNotificationsResponse);
+    rpc GetAndMarkNotificationAsRead(GetAndMarkNotificationAsReadReq) returns (GetAndMarkNotificationAsReadRes);
+  }
+  
+
 message UpdatePasswordReq {
     string id       = 1;
     string password = 2;
@@ -153,3 +159,43 @@ message ChangePasswordReq {
 message ChangePasswordRes {
   string message = 1; 
 }
+
+
+
+
+
+
+
+
+message CreateNotificationsReq{
+    string user_id = 1;
+    string message = 2;
+}
+  
+message CreateNotificationsRes{
+    string id = 1;
+}
+  
+message GetNotificationsReq{
+    string user_id = 1;
+}
+  
+message Notification{
+    string id      = 1;
+    string user_id = 2;
+    string message = 3;
+}
+  
+message GetNotificationsResponse{
+    repeated Notification notifications = 1;
+}
+  
+message GetAndMarkNotificationAsReadReq{
+    string user_id = 1;
+}
+  
+  
+message GetAndMarkNotificationAsReadRes{
+    repeated Notification notifications = 1;
+}
+  
