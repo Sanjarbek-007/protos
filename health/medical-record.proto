@@ -46,7 +46,7 @@ message MedicalReport {
     string record_type          = 4;
     string record_date          = 5;
     string description          = 6;
-    string doctor_name          = 7;
+    string doctor_id          = 7;
     repeated string attachments = 8;
 }
 
@@ -64,7 +64,6 @@ message GetMedicalReportByIdRes {
     string record_date              = 7;
     string description              = 8;
     string doctor_id                = 9;
-    string doctor_name              = 10;
     repeated Attachment attachments = 11;
 }
 
