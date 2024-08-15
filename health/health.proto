@@ -11,9 +11,6 @@ service HealthCheck {
     rpc GetWeeklyHealthSummary(GetWeeklyHealthSummaryReq) returns (GetWeeklyHealthSummaryRes);
     rpc AddRealTimeData(AddRealTimeDataReq) returns (AddRealTimeDataRes);
     rpc GetRealTimeData(GetRealTimeDataReq) returns (GetRealTimeDataRes);
-}
-
-service HealthMonitoring {
     rpc GetHealthMonitor(UserId) returns (GetHealthMonitorsRes);
 }
 
