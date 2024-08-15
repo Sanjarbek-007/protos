@@ -16,17 +16,11 @@ service Users {
     rpc GetUserById (UserId) returns (User);
     rpc UpdatePassword (UpdatePasswordReq) returns (Void);
     rpc ChangePassword (ChangePasswordReq) returns (ChangePasswordRes);
-    
+
     rpc GetAllNotifications(GetNotificationsReq) returns (GetNotificationsResponse);
     rpc GetAndMarkNotificationAsRead(GetAndMarkNotificationAsReadReq) returns (GetAndMarkNotificationAsReadRes);
     rpc CreateNotifications(CreateNotificationsReq) returns (CreateNotificationsRes);
 }
-
-service Notifications{
-    rpc GetAllNotifications(GetNotificationsReq) returns (GetNotificationsResponse);
-    rpc GetAndMarkNotificationAsRead(GetAndMarkNotificationAsReadReq) returns (GetAndMarkNotificationAsReadRes);
-    rpc CreateNotifications(CreateNotificationsReq) returns (CreateNotificationsRes);
-  }
   
 
 message UpdatePasswordReq {
