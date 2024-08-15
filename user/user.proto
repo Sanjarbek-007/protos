@@ -16,6 +16,10 @@ service Users {
     rpc GetUserById (UserId) returns (User);
     rpc UpdatePassword (UpdatePasswordReq) returns (Void);
     rpc ChangePassword (ChangePasswordReq) returns (ChangePasswordRes);
+    
+    rpc GetAllNotifications(GetNotificationsReq) returns (GetNotificationsResponse);
+    rpc GetAndMarkNotificationAsRead(GetAndMarkNotificationAsReadReq) returns (GetAndMarkNotificationAsReadRes);
+    rpc CreateNotifications(CreateNotificationsReq) returns (CreateNotificationsRes);
 }
 
 service Notifications{
@@ -199,3 +203,6 @@ message GetAndMarkNotificationAsReadReq{
 message GetAndMarkNotificationAsReadRes{
     repeated Notification notifications = 1;
 }
+
+// doctor
+// e4033fd7-fefb-46a5-943d-9cb682c66d59
