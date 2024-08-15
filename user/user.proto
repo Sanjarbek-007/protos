@@ -21,6 +21,7 @@ service Users {
 service Notifications{
     rpc GetAllNotifications(GetNotificationsReq) returns (GetNotificationsResponse);
     rpc GetAndMarkNotificationAsRead(GetAndMarkNotificationAsReadReq) returns (GetAndMarkNotificationAsReadRes);
+    rpc CreateNotifications(CreateNotificationsReq) returns (CreateNotificationsRes);
   }
   
 
@@ -198,4 +199,3 @@ message GetAndMarkNotificationAsReadReq{
 message GetAndMarkNotificationAsReadRes{
     repeated Notification notifications = 1;
 }
-  
